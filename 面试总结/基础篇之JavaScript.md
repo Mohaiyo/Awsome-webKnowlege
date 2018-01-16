@@ -1,32 +1,36 @@
-一，基本知识
+# JavaScript 基础
 
-1，基本类型
+## 基本知识
 
-字符串（String）、数字(Number)、布尔(Boolean)、 数组(Array)、  
+### js数据类型
 
-对象(Object)、空（Null）、未定义（Undefined）
+- 基本类型:字符串（String）、数字(Number)、布尔(Boolean)、空（Null）、未定义（Undefined）、ES6新增（Symbol）
+- 对象类型(引用类型): 对象(Object)
 
-2，判断数据类型的方法
+### 判断js数据类型的方法
 
-判断对象类型的方法有: typeof、instanceof、constructor、toString
+> 判断数据类型的方法有: typeof、instanceof、constructor、Object.toString.call()
 
- (1)，typeof
+- typeof
 
-     typeof {}; // "object"
-     
-     typeof []; // "object"
+```js
+  typeof {}; // "object"
+  typeof []; // "object"
+  typeof null; //"object"
+```
 
-     局限性：判断不完全正确。
+> 局限性：判断不完全正确。一般用于判断基本类型 除了引用类型的function会返回 'function'外，其余的无法判断，况且null也是返回"object"
 
- (2)， instanceof 
+- instanceof
 
-     function isArray(arr){
+```js
+  function isArray(arr){
 
-       return arr instanceof Array;
+    return arr instanceof Array;
 
-     }
-     
-     注意：不完全准确。
+  }
+```
+> 注意：不完全准确。
 
  (3)，constructor
 

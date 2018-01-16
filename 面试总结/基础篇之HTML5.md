@@ -159,6 +159,7 @@ const getLocation ()=>{
   - 给html、css、js都加上哈希值hash或者时间戳来解决
 
   - 禁用缓存，设置cache-control，如下：
+
   ```html5
   <meta http-equiv="expires" content="0">
 
