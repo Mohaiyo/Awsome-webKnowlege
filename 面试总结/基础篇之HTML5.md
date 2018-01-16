@@ -24,7 +24,8 @@
 > 功能：progress、figure、time
 
 - 新的input类型:
-> 常用：number、time、url、date、email、month、search
+
+> 常用：number、time、url、date、email、month、search、calendar
 > 其他：datetime、datetime-local、range、tel、week
 > 属性：autocomplete、placeholder、min/max、required
 
@@ -60,11 +61,11 @@
 
 - canvas:
 
-> 位图。与svg不同，canvas基于JavaScript来绘制 2D 图形。 不支持事件处理器和dom操作。
+> 位图。与svg不同，canvas基于JavaScript来绘制 2D 图形。 不支持事件处理器和dom操作。HTML5 的 canvas 元素使用 JavaScript 在网页上绘制图像。画布是一个矩形区域，您可以控制其每一像素。
 
 - svg:
 
-> 矢量图。  适用于2D小游戏，图形图表等。svg是基于xml来述 2D 图形的,支持事件处理器和dom操作。
+> 矢量图。  适用于2D小游戏，图形图表等。svg是基于xml来描述 2D 图形的,支持事件处理器和dom操作。图像放大或者改变尺寸，图形质量不会改变。
 
 - webGL:
 
@@ -93,13 +94,14 @@ const getLocation ()=>{
 
 - web缓存:
   - appication cache。
+    > HTML5引入了应用程序缓存，意味着web应用也可以进行缓存了，有三个优势1、离线浏览 2、速度 3、减少服务器负担
     - 首先，配置manifest文件，并和代码一起放在服务器上(根目录)
     - 给html标签配置manifest属性，属性值等于manifest文件文件名。建议以`".appcache"`结尾。
 
   - manifest文件配置格式:
     - 由三部分组成，分别是：CACHE MANIFEST、NETWORK、FALLBACK
 
-    > v1.0版本
+    > v1.0版本--注释前面应该有#
     > CACHE MANIFEST (在此标题下列出的文件将在首次下载后进行缓存)
     > /style.css
     > /loading.gif
@@ -112,6 +114,21 @@ const getLocation ()=>{
     ***
     > FALLBACK (在此标题下列出的文件规定当页面无法访问时的回退页面(比如 404 页面))
     > /html/ /offline.html (注意: 第一个 URI 是资源，第二个是替补。)
+    > 完整的mainifest文件
+
+    ```appcache
+    CACHE MANIFEST
+    # 2012-02-21 v1.0.0
+    /theme.css
+    /logo.gif
+    /main.js
+
+    NETWORK:
+    login.asp
+
+    FALLBACK:
+    /html5/ /404.html
+    ```
 
 - web存储
 
