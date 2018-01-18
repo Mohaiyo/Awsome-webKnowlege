@@ -98,12 +98,12 @@
 
 二，web安全
 
-1，xss漏洞
+1，xss漏洞(cross-site script)
 
   攻击者在输入域注入恶意代码，注入的代码会被执行，从而达到攻击的特殊目的。
  
 预防：输入输出检查，对特殊字符进行转义。
-2，csrf跨站请求伪造
+2，csrf跨站请求伪造( cross-site request Forgey)
 
 
 预防：  
