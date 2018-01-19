@@ -150,7 +150,7 @@ const decoder = new StringDecoder('utf8');
 
 ## http模块 （https模块与之类似）
 
-- const server = http.createServer(fun)   // 创建http.Server实例  
+- const server = http.createServer(fun)   // 创建http.Server实例
 
 - server.listen(port)   // 监听端口
 
@@ -184,7 +184,7 @@ emitter.on(name, f) // 监听事件
 
 emitter.emit(name,传参)  // 触发事件
 
-emitter.once(name, f) //与on方法类似，但是监听函数f是一次性的，使用后自动移除 
+emitter.once(name, f) //与on方法类似，但是监听函数f是一次性的，使用后自动移除
 
 emitter.listeners(name) //返回一个数组，成员是事件name所有监听函数
 
