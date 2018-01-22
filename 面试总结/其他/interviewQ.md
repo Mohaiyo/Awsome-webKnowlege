@@ -7,7 +7,13 @@
 ### Html5/css3基础
 
 - 常见问题：盒子模型、布局方式、水平垂直居中、新特性、flex、websocket，缓存、存储等等
+  - 盒子模型：IE盒模型与W3C标准盒模型
+    - IE盒模型：content+padding+border
+    - W3C标准盒模型: 属性width,height只包含内容content，不包含border和padding
 - 加分项：canvas、svg、d3
+
+- doctype的意义
+> 因为若不声明DOCTYPE类型，IE浏览器会将盒子模型解释为IE盒子模型，FireFox等会将其解释为W3C盒子模型；若在页面中声明了DOCTYPE类型，所有的浏览器都会把盒模型解释为W3C盒模型。
 
 ### javascript / es6
 

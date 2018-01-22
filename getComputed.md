@@ -1,3 +1,3 @@
-# getComputed
+# getComputed & getPropertyValue
 
-[http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/](原文地址)
+[原文地址](http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/)

@@ -14,9 +14,15 @@ const Any = new Schema({
 const Any = new Schema({
   any: Schema.Types.Mixed
 })
+// 又或者
+const Any = new Schema({
+  any: Object
+})
+// 可以设置任意值
 ```
 
 - ObjectId:  Schema.Type.ObjectId
+> 自动创建ObjectId
 
 - Array: 数组类型
 
@@ -138,7 +144,7 @@ doc.i; // 3
 
 [mongoose官方文档](http://mongoosejs.com/docs/4.x/docs/schematypes.html)
 
-## model 模型
+## models 模型
 
 > 模型基于schema，通过调用mongoose.model(模型名称,schema)方法注入
 
@@ -146,20 +152,39 @@ const mymodel = mongoose.model('Mymodel',schema)
 
 ## documents 文档
 
-> 文档是模型的实例，也就是document是model的实例.
+> 文档是模型的实例，也就是document是model的实例.创建并且把他们储存到数据库是很容易的。
+
+```js
+var tankSchema = new mongoose.Schema({ name: 'string', size: 'string' });
+
+var Tank = mongoose.model('Tank', tankSchema);
+
+var small = new Tank({ size: 'small' });
+small.save(function (err) {
+  if (err) return handleError(err);
+  // saved!
+})
+
+// or
+
+Tank.create({ size: 'small' }, function (err, small) {
+  if (err) return handleError(err);
+  // saved!
+})
+```
 
 ## 增删改查
 
-- 增
+- 增(creat)
   - model新增： model.create(data,callback)
 
-  - entity新增
+  - entity新增(entity实例新增)
   ```js
   const entity = new model(data);
   entity.save(callback);
   ```
 
-- 删
+- 删(remove)
   - model.remove(filter,callback);
   - model.findByIdAndRemove(id,options,callback)
     - options配置如下:
@@ -170,7 +195,7 @@ const mymodel = mongoose.model('Mymodel',schema)
       - sort： 如果有多个查询条件，按顺序进行查询更新。
       - maxTimeMS： 查询用时上限。
       - select： 设置数据的返回。
-- 改
+- 改(update)
   - model.update(filter,data,options,callback)
   > options的配置与findOneAndUpdate相同
   - model.findOneAndUpdate(filter,data,options,options.passRawResult,options.strict,callback)
@@ -195,10 +220,13 @@ const mymodel = mongoose.model('Mymodel',schema)
   - model.updateMany(filter,data,options,callback);
   > 一次更新多条
 
-- 查
+- 查(query)
   - model.find(filter,select,options,callback);
   - model.findOne(filter,select,callback);
   - model.findById(id,select,callback);
+  - where
+
+[See the chapter on querying for more details on how to use the Query api.](http://mongoosejs.com/docs/4.x/docs/api.html#query-js)
 
 ## 复杂查询之——比较运算符查询
 
@@ -229,7 +257,8 @@ const mymodel = mongoose.model('Mymodel',schema)
 > model.find({$or:[{field1:value},{field2:value}]})
 
 ```js
-model.find({$or:[{name:'小米'},{age:24}]})
+model.find({$or:[{name: 'ohaiyo'}, {age: 24}]})
+// 查找名字为ohaiyo 或者 年龄为24岁的文档
 ```
 
 - 并且：$and
@@ -274,8 +303,8 @@ UserModel.find({})
   .where('name').equals('李白')
   .where('age').gt(18).lt(24)
   .where('adress').in(['china',US])
-  .select('name age adress')
-  .exec(cb)
+  .select('name age adress')  //返回名字 姓名和地址
+  .exec(cb) // 执行回调
 ```
 
 ## 复杂查询之——数组查询
@@ -311,8 +340,8 @@ model.where(field).size(2)
 model.find().limit()
 ```
 
-- skip(val)
-> 跳过前N个查询
+- skip(num)
+> 跳过前num个查询
 
 ```js
 model.find().limit(5).skip(10);
@@ -353,10 +382,10 @@ model.find().populate('author',select).exec(cb)
 // 或者传入对象详细查询
 
 model.find().populate({
-      patch:'author',            // path匹配关联表的字段
-      match: { age:{$gt:22} },   // match是一些关联查询条件
+      path:'author',            // path匹配关联表的字段
+      match: { age: {$gt:22} },   // match是一些关联查询条件
       select: '-_id -password',  // select是选择返回的字段
-      options: { limit: 5 }      // 一些游标查询条件
+      options: { limit: 20,skip: 10 }      // 一些游标查询条件
     }).exec(cb);
 ```
 
@@ -388,6 +417,7 @@ model.find()
 
 ## 聚合查询——aggregate
 
+> 还没有空仔细研究
 > 比aggregate更高级的数据分析方法是mapreduce
 
 ```js
