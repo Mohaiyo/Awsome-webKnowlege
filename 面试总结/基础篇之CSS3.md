@@ -53,7 +53,7 @@
 
 - 圆角：border-radius
 
-- 边框：border-shadow
+- 边框：box-shadow
 
 - 渐变、背景、字体、文本效果等。
 
@@ -89,7 +89,7 @@
 ### 动态特效
 
 > CSS3动态特效主要有三种:
-transform(转换)、transition(过度)、animation(动画)。
+transform(转换)、transition(过渡)、animation(动画)。
 
 - 2D、3D转换 (transform)
 

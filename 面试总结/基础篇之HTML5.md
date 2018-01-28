@@ -116,7 +116,7 @@ const getLocation ()=>{
     > /html/ /offline.html (注意: 第一个 URI 是资源，第二个是替补。)
     > 完整的mainifest文件
 
-    ```appcache
+    ```manifest.appcache
     CACHE MANIFEST
     # 2012-02-21 v1.0.0
     /theme.css
@@ -177,24 +177,24 @@ const getLocation ()=>{
 ```js
 var ws = new WebSocket("ws://localhost:9998/echo");
 
-  ws.onopen = ()=>{
-    // 连接成功的回调
-    ws.send("已连接成功，请发送数据过来");
-  }
+ws.onopen = ()=>{
+  // 连接成功的回调
+  ws.send("已连接成功，请发送数据过来");
+}
 
-  ws.onmessage = (evt)=>{
-    // 接收数据
-    const data = evt.data;
-    ws.close();
-  }
+ws.onmessage = (evt)=>{
+  // 接收数据
+  const data = evt.data;
+  ws.close();
+}
 
-  ws.onclose = ()=>{
-    // 连接已关闭
-  }
+ws.onclose = ()=>{
+  // 连接已关闭
+}
 
-  ws.onerror = ()=>{
-    // 通信出错
-  }
+ws.onerror = ()=>{
+  // 通信出错
+}
 ```
 
 - web workers
