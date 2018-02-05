@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--[if IE 9]> <meta http-equiv="X-UA-Compatible" content="IE=9" /><![endif]-->
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+  <!-- <script src="main.js"></script> -->
+  <style type="text/css">
+    .parent{
+      text-align: center;
+      background-color: aliceblue;
+      width: 100%;
+    }
+    .child{
+      display: inline-block;
+      /* width: 200px; */
+      background-color: aqua;
+    }
+    .center{
+      margin: 0 auto;
+      width: 500px;
+      text-align: center;
+    }
+    .table{
+      display: table;
+      margin: 0 auto;
+    }
+    .flex{
+      display: flex;
+      justify-content: center;
+    }
+    .flex-item{
+      background-color: aquamarine;
+      flex:0.5;
+    }
+    .flex-item2{
+      flex:1;
+    }
+    .abs{
+      position: relative;
+      border: 4px solid red;
+    }
+    .block{
+      position: absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%,-50%);
+      width: 300px;
+      height: 30px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- 单列模式  居中 -->
+    <div class="parent">
+      <div class="child">我就不明白了</div>
+    </div>
+    <div class="center">
+      单列居中模式
+    </div>
+    <div class="table">
+      <div class="is ok">我只是table中的一行</div>
+      <div>我是第二韩</div>
+    </div>
+    <div class="flex">
+      <div class="flex-item">到底想要怎么样啊</div>
+      <div class="flex-item2">反正我要举重 你们不要拦着我！！</div>
+    </div>
+    <!-- 脱离普通文档流 -->
+    <div class="abs">
+      <!-- 如果我在你前面呢  这怎么解析啊！！！ -->
+      <div class="block"></div>
+      我是一个绝对定位的元素  你怎么可以把我遮住呢
+      ！！！！
+    </div>
+    <input type="url" placeholder="cacaca">
+    <input type="date" placeholder="cacaca">
+    <input type="email" placeholder="cacaca">
+    <input type="month" placeholder="cacaca">
+    <input type="search" placeholder="cacaca">
+    <input type="datetime" placeholder="cacaca">
+    <input type="datetime-local" placeholder="cacaca">
+    <input type="range" placeholder="cacaca">
+    <input type="tel" placeholder="cacaca">
+    <input type="week" placeholder="cacaca">
+  </div>
+</body>
+</html>

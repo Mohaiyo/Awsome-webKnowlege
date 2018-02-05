@@ -12,7 +12,29 @@
 ### 布局方式
 
 - 单列布局 : 全屏或单列居中。
-
+  - 使用inline-block 和 text-align实现
+  ```css
+  .parent{text-align: center;}
+  .child{display: inline-block;}
+  /* 优点：兼容性好； */
+  /* 不足：需要同时设置子元素和父元素 */
+  ```
+  - 使用margin:0 auto来实现
+  ```css
+  .child{width: 200px; margin: 0 auto;}
+  /* 优点：兼容性好 缺点: 需要指定宽度 */
+  ```
+  - 使用table实现
+  ```css
+  .child{display: table; margin: 0 auto;}
+  /* 优点:只需要对自身进行设置  不足:IE6,7需要调整结构 */
+  ```
+  - 使用绝对定位实现
+  ```CSS
+  .parent{position:relative;}
+  /*或者实用margin-left的负值为盒子宽度的一半也可以实现，不过这样就必须知道盒子的宽度，但兼容性好*/
+  .child{position:absolute; left:50%; transform:translate(-50%);}
+  ```
 - 两列布局 ：通过浮动或绝对定位来实现。
 
 - 多列布局 ：通过浮动+绝对定位来实现。
