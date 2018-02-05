@@ -9,7 +9,7 @@
 
 ### 判断js数据类型的方法
 
-> 判断数据类型的方法有: typeof、instanceof、constructor、Object.toString.call()
+> 判断数据类型的方法有: typeof、instanceof、constructor、Object.prototype.toString.call()
 
 - typeof
 
@@ -33,7 +33,7 @@ function isArray(arr){
 
 > 注意：不完全准确。 例如有多个iframe的情况下就会
 
-- constructor
+- constructor你    ？
 
 ```js
 function isArray(arr){
@@ -41,7 +41,7 @@ function isArray(arr){
 }
 ```
 
-- Object.toString.call()
+- Object.prototype.toString.call()
 
 ```js
 // 简介： 通过调用Object原型下的toString.call()方法
@@ -172,7 +172,7 @@ arr.toString();  // 数组转字符串，以逗号隔开。
 - 数组去重 利用对象属性的去重
 
 ```js
-const heavy = arr => {
+const uniqe = arr => {
   let obj = {}
   let arrTmp = []
   for(let i=0;i<arr.length;i++;){
