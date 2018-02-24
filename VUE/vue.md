@@ -277,3 +277,56 @@ vm.userProfile = Object.assign({}, vm.userProfile, {
 > 有时，我们想要显示一个数组的过滤或排序副本，而不实际改变或重置原始数据。在这种情况下，可以创建返回过滤或排序数组的计算属性。或者计算属性不适用的情况下，使用methods方法
 
 ### 一个组件的v-for
+
+> 2.2.0+ 的版本里，当在组件中使用 v-for 时，key 现在是必须的。需要注意的是组件需要明确数据的来源，减少代码的耦合很重要  所以不会自动将item注入组件，而是用props来接收
+
+```html
+<my-component v-for="item in items" :key="item.id"></my-component>
+```
+
+## 事件处理
+
+### 事件修饰符
+
+> 在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。为了解决这个问题，Vue.js 为 v-on 提供了事件修饰符。之前提过，修饰符是由点开头的指令后缀来表示的
+
+- .stop
+- .prevent
+- .once
+- .capture
+- .self
+
+```html
+<!-- 阻止单击事件继续传播 -->
+<a v-on:click.stop="doThis"></a>
+
+<!-- 提交事件不再重载页面 -->
+<form v-on:submit.prevent="onSubmit"></form>
+
+<!-- 修饰符可以串联 -->
+<a v-on:click.stop.prevent="doThat"></a>
+
+<!-- 只有修饰符 -->
+<form v-on:submit.prevent></form>
+
+<!-- 添加事件监听器时使用事件捕获模式 -->
+<!-- 即元素自身触发的事件先在此处处理，然后才交由内部元素进行处理 -->
+<div v-on:click.capture="doThis">...</div>
+
+<!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+<!-- 即事件不是从内部元素触发的 -->
+<div v-on:click.self="doThat">...</div>
+```
+
+> 2.3.0 新增
+
+Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符
+
+```html
+<!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
+<!-- 而不会等待 `onScroll` 完成  -->
+<!-- 这其中包含 `event.preventDefault()` 的情况 -->
+<div v-on:scroll.passive="onScroll">...</div>
+```
+
+> 这个 .passive 修饰符尤其能够提升移动端的性能。
