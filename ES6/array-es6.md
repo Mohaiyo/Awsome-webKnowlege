@@ -36,3 +36,31 @@ function f(nx, y, z) {
 let args = [0, 1, 2];
 fn(...args);
 ```
+
+```js
+// 利用扩展运算符求最大值
+// es5
+Math.max.apply(null, [14, 3, 77])
+
+// ES6 的写法
+Math.max(...[14, 3, 77])
+
+// 等同于
+Math.max(14, 3, 77);
+
+```
+
+```js
+// 将一个数组添加到另一个数组的尾部。
+
+let arr1 = [0, 1, 2, 4]
+let arr2 = [3, 5]
+
+Array.prototype.push.apply(arr1, arr2)
+// [0, 1, 2, 4, 3, 5]
+
+// ES6 的写法
+let arr1 = [0, 1, 2];
+let arr2 = [3, 4, 5];
+arr1.push(...arr2);]
+```

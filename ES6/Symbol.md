@@ -116,3 +116,17 @@ console.log(JSON.stringify(obj))
 const objectSymbols = Object.getOwnPropertySymbols(obj);
 // [Symbol(sy1), Symbol(sy2)]
 ```
+
+> 另外一个新的api,Reflect.ownKeys方法可以返回所有类型的键名，包括常规键名以及symbol键名
+
+```js
+let obj = {
+  [Symbol('uniqe_key')]: 1,
+  enum: 2,
+  noEnum: 3
+}
+
+Refelect.ownKeys(obj)
+// ['enum', 'noEnum', Symbol(uniqe_key)]
+// ["enum", "noEnum", Symbol(uniqe_key)]
+```
