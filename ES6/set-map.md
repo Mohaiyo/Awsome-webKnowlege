@@ -82,6 +82,10 @@ s
 
 > 如何去除重复数组成员
 
+***
+> 如何去除重复的数组对象元素
+[https://funteas.com/topic/5a5fa1a43349de0e75ecd359](数组对象去重)
+
 ```js
 
 function dedupe(arr){
@@ -170,6 +174,7 @@ data[el] = 'metadata';
 data['[object HTMLDivElement]'] // "metadata"
 // 上面代码原意是将一个 DOM 节点作为对象data的键，但是由于对象只接受字符串作为键名，所以element被自动转为字符串[object HTMLDivElement]。
 ```
+
 > 为了解决这个问题，ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
 
 ```js
@@ -183,3 +188,41 @@ m.has(o) // true
 m.delete(o) // true
 m.has(o) // false
 ```
+
+> Map可以接受数组作为参数，事实上任何具有iterator、且每个成员都是一个双元素的数组的数据结构都可以当Map构造函数的参数。Set和Map都可以生成新的Map结构
+
+```js
+const map = new Map([
+  ['name', '张三'],
+  ['title', 'Author']
+]);
+
+map.size // 2
+map.has('name') // true
+map.get('name') // "张三"
+map.has('title') // true
+map.get('title') // "Author"
+
+// Map构造函数接受数组作为参数，实际上执行的是下面的算法。
+
+const items = [
+  ['name', '张三'],
+  ['title', 'Author']
+];
+
+const map = new Map();
+
+items.forEach(
+  ([key, value]) => map.set(key, value)
+);
+
+const set = new Set([
+  ['foo', 1],
+  ['bar', 2]
+]);
+const m1 = new Map(set);
+m1.get('foo') // 1
+
+const m2 = new Map([['baz', 3]]);
+const m3 = new Map(m2);
+m3.get('baz') // 3
