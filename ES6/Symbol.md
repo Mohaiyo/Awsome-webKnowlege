@@ -18,8 +18,8 @@ typeof s
 ```js
 let sy1 = Symbol('x')
 let sy2 = Symbol('y')
-sy1 // Symbol(foo)
-sy2 // Symbol(bar)
+sy1 // Symbol('x')
+sy2 // Symbol('y')
 
 sy1.toString() // "Symbol(x)"
 sy2.toString() // "Symbol(y)"
