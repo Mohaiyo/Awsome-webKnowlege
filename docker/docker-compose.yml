@@ -1,0 +1,44 @@
+version: "3"
+services:
+  web:
+    # replace username/repo:tag with your name and image details
+    # 拉取我们上传的image
+    image: mohaiyo/get-started:part2
+    deploy:
+      replicas: 5 # 将该映象的5个实例作为调用服务运行web，限制每个实例使用最多10%的cpu(跨所有内核)和50M的RAM
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure # 如果一个失败立即重启容器
+    ports:
+      - "80:80" # 将主机上的端口4000映射到web端口80
+    networks: 
+      - webnet # 指示web容器通过称为负载平衡的网络共享端口80 webnet
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes: # 一个volumes键，让可视化工具访问Docker的主机套接字文件
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement: # 一个placement密钥，确保这个服务只能在一个swarm管理器上运行
+        constraints: [node.role == manager]
+    networks:
+      - webnet
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - "/home/docker/data:/data"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    command: redis-server --appendonly yes
+    networks:
+      - webnet
+networks:
+  webnet:
+
