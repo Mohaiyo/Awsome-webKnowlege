@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="parent" class="parent">
+    <div id="child" class="child">click me</div>
+  </div>
+</body>
+<script>
+// 非target目标  先捕获 后冒泡   target目标 看dom2事件注册顺序  先注册先触发
+document.getElementById('parent').addEventListener('click', function() {
+  console.log('parent 冒泡')
+})
+document.getElementById('child').addEventListener('click', function() {
+  console.log('child 冒泡')
+})
+document.getElementById('parent').addEventListener('click', function() {
+  console.log('parent 捕获')
+}, true)
+document.getElementById('child').addEventListener('click', function() {
+  console.log('child 捕获')
+}, true)
+</script>
+</html>

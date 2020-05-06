@@ -6,6 +6,10 @@
 
 scp ~/.ssh/id_rsa.pub root@ip:~
 
+如果不知道密码  有.pem文件可以直接使用
+
+scp -i path/to/your.pem ~/.ssh/id_rsa.pub root@ip:~
+
 ## release.sh脚本
 
 ```bash
@@ -20,9 +24,21 @@ npm-debug.log
 
 ```bash
 # 发布
-rsync -cavzP  ./ --exclude-from='.rsync-exclude' root@ip:/path/to/deploy
+rsync -cavzP  ./ --exclude-from='.rsync-exclude' root@ip:/path/to/deployDir
 ssh root@ip "\
-cd /path/to/deploy;
+cd /path/to/deployDir;
+npm install; \
+sh deploy.sh; \
+"
+```
+
+或者
+
+```bash
+# 发布
+rsync -cavzP -e "ssh -i /path/to/your.pem" ./ --exclude-from='.rsync-exclude' root@ip:/path/to/deployDir
+ssh root@ip "\
+cd /path/to/deployDir;
 npm install; \
 sh deploy.sh; \
 "
