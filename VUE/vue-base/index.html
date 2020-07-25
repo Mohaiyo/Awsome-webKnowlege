@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Base course</title>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <p class="title" :title="time">
+      鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </p>
+    <ol>
+      <todo-item v-for="item of groceryList" :todo="item" :key="item.id"></todo-item>
+    </ol>
+    <select value="strawberry">
+      <option value="apple">苹果</option>
+      <option value="pear">梨</option>
+      <option value="strawberry">草莓</option>
+    </select>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{ todo.text }}</li>'
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello vue',
+        time: '页面加载于 ' + new Date().toLocaleString(),
+        grmoceryList: [
+          { id: 0, text: '蔬菜' },
+          { id: 1, text: '奶酪' },
+          { id: 2, text: '随便其它什么人吃的东西' }
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>
