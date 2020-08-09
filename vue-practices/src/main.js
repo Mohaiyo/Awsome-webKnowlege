@@ -2,23 +2,25 @@ import Vue from 'vue'
 import App from './App.vue'
 import { Button, Tabs } from 'ant-design-vue'
 // import Vuex from 'vuex'
-import Vuex from './views/minVuex/min-vuex'
+import store from './store'
+// import Vuex from './views/minVuex/min-vuex'
+
 
 Vue.config.productionTip = false
 
 Vue.use(Button)
 Vue.use(Tabs)
 // Vue.use(Vuex)
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment(state, payload) {
-      state.count = state.count + payload
-    }
-  }
-})
+// const store = new Vuex.Store({
+//   state: {
+//     count: 0
+//   },
+//   mutations: {
+//     increment(state, payload) {
+//       state.count = state.count + payload
+//     }
+//   }
+// })
 Vue.prototype.$store = store
 Vue.directive('ant-ref', {
     bind: function bind(el, binding, vnode) {
@@ -50,6 +52,6 @@ Vue.directive('ant-ref', {
 
 
 new Vue({
-  // store: store,
+  store: store,
   render: h => h(App),
 }).$mount('#app')

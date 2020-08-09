@@ -9,7 +9,8 @@
       <!-- <proxy /> -->
       <!-- <spike /> -->
       <!-- <VuexState /> -->
-      <min-vuex />
+      <!-- <min-vuex /> -->
+      <shop-cart />
     </div>
     
   </div>
@@ -26,7 +27,8 @@
 // import chaptersNinght from './views/chapters1.9/index'
 // import Proxy from './views/Proxy/index'
 // import VuexState from './views/VuexState/index'
-import MinVuex from './views/minVuex/index'
+// import MinVuex from './views/minVuex/index'
+import ShopCart from './views/shopCart'
 // import Spike from './views/Spike/index'
 export default {
   name: 'App',
@@ -42,7 +44,8 @@ export default {
     // Proxy
     // Spike,
     // VuexState,
-    MinVuex
+    // MinVuex,
+    ShopCart
   },
   data() {
     return {
