@@ -9,7 +9,7 @@
     </ul>
     <p>合计： {{ total }} 元</p>
     <p><button :disabled="!products.length" @click="checkout(products)">提交订单</button></p>
-    <p v-show="checkoutStatus">提交 {{ checkoutStatus }}</p>
+    <p v-show="checkoutStatus">提交: {{ checkoutStatus }}</p>
   </div>
 </template>
 
