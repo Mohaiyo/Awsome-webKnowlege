@@ -5,7 +5,7 @@
 .btn{
   background-color: #fff;
   border: 1px solid #222;
-  width: 100px;
+  width: 80px;
   height: 30px;
   line-height: 28px;
   font-size: 14px;
@@ -14,6 +14,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
-.btn:focus{
+.btn:hover{
   outline: none;
+  width: 120px;
 }
