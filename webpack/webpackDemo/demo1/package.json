@@ -1,0 +1,24 @@
+{
+  "name": "demo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack --mode=development --config webpack.config.js"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "mohaiyo@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "raw-loader": "^4.0.2",
+    "webpack": "^4.44.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.0.0"
+  }
+}
