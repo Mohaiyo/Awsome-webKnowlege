@@ -5,12 +5,17 @@
     <div>
       <input v-model="message" />
     </div>
+    <custom-table />
   </div>
 </template>
 
 <script>
+import customTable from '../components/table.vue'
 export default {
   name: 'app',
+  components: {
+    customTable
+  },
   data() {
     return {
       hi: 'hi wayne,',

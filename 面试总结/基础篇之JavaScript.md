@@ -241,6 +241,7 @@ function SingleDog(name, age, sex){
   this.name = name
   this.age = age
   this.sex = sex
+  return this
 }
 
 const f = new SingleDog('ohaiyo', 40, 'man');
@@ -386,7 +387,7 @@ const module = {
 - 函数写法 (隐藏私有变量)
 
 ```js
-// 匿名自执行函数
+// 匿名自执行函数 IIEF
 
 const module = (function(){
 

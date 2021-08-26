@@ -1,6 +1,6 @@
 # Call Stack
 
-原文 [Call Stack](https://developer.mozilla.org/zh-CN/docs/Glossary/Call_stack)
+[Call Stack](https://developer.mozilla.org/zh-CN/docs/Glossary/Call_stack)
 
 ```js
 function fn() {

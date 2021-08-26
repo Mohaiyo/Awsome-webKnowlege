@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form</title>
+</head>
+<body>
+  <form action="" method="post" enctype="application/x-www-form-urlencoded">
+    <label for="name">用户名</label>
+    <input id="name" name="txtUsername" value="wayne" type="text" maxlength="12" readonly disabled />
+    <label for="pwd">密码</label>
+    <input id="pwd" name="txtUserpwd" value="wayne" type="password" />
+    <label for="favoriteFruit">最喜欢的水果</label>
+    <input type="radio" name="rdoFavorit" value="apple">苹果</input>
+    <input type="radio" name="rdoFavorit" value="pear">梨</input>
+    <input type="radio" name="rdoFavorit" value="banana" checked>香蕉</input>
+    <input type="radio" name="rdoFavorit" value="potato">土豆</input>
+    <input type="radio" name="rdoFavorit" value="tomato">西红柿</input>
+
+    <label id="FavoriteBook">最喜欢的水果</label>
+    <input type="checkbox" name="chkFavorit" value="banana" checked>香蕉</input>
+    <input type="checkbox" name="chkFavorit" value="potato">土豆</input>
+    <input type="checkbox" name="chkFavorit" value="tomato">西红柿</input>
+
+    <input type="submit" value="提交表单"></input>
+    <input type="reset" value="重置"></input>
+    <input type="button" value="button"></input>
+    
+    <select name="selectMultiple" size="2" multiple>
+      <option value="apple" selected>苹果</option>
+      <option value="pear" selected>梨</option>
+      <option value="potato">土豆</option>
+      <option value="tomato">西红柿</option>
+    </select>
+  </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      /* width: 600px; */
+    }
+    /* .clearfix::before{
+      clear: both;
+      content: '';
+      display: block;
+      height: 0;
+      visibility: hidden;
+    } */
+    .clearfix::after{
+      clear: both;
+      content: '';
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+    #block-1,#block-2,#block-3,#block-4{
+      width: 300px;
+      height: 300px;
+    }
+    #block-1{
+      /* height: 320px; */
+    }
+    #block-1{
+      float:right;
+      background-color: blue;
+    }
+    #block-2{
+      float:right;
+      background-color: brown;
+      /* clear: right; */
+      clear: right;
+    }
+    #block-3{
+      float:right;
+      background-color: yellow;
+      clear: right;
+    }
+    #block-4{
+      float:left;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="block-1"></div>
+  <div id="block-2"></div>
+  <div id="block-3"></div>
+  <div id="block-4"></div>
+  <span>中国人</span>
+</body>
+</html>

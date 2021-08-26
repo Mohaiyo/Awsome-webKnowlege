@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>盒模型 背景 渐变</title>
+  <style>
+    .background-sec{
+      width: 400px;
+      height: 400px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-image: linear-gradient(45deg,yellow 0px, purple 25%, orange 50%, blue 75%);
+    }
+    .background-sec2{
+      width: 400px;
+      height: 400px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-image: radial-gradient(200px at center center, #000, #fff);
+    }
+    .background-sec3{
+      width: 400px;
+      height: 400px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-image: repeating-linear-gradient(0deg,yellow 0px, purple 25px, orange 50px, blue 75px);
+    }
+    .background-sec4{
+      width: 400px;
+      height: 400px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-image: repeating-linear-gradient(90deg,yellow 0px, purple 25%, orange 50%, blue 75%);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-sec">
+    <h1>色标的用法---线性渐变</h1>
+    <ul>
+      <li>to top 0deg</li>
+      <li>to right 90deg</li>
+      <li>to bottom 180deg</li>
+      <li>to left 270deg</li>
+    </ul>
+  </div>
+  <div class="background-sec2">
+    <h1>色标的用法---径向渐变</h1>
+    <p>radial-gradient: size at position</p>
+    <ul>
+      <li>size: 半径大小</li>
+      <li>position</li>
+      <li>0px 0px左上角</li>
+      <li>50% 50%圆心在元素中间</li>
+      <li>left bottom:圆心在元素左下角</li>
+    </ul>
+  </div>
+
+  <div class="background-sec3">
+    <h1>色标的用法---重复线性渐变repeating-linear-gradient</h1>
+    <ul>
+      <li>to top 0deg</li>
+      <li>to right 90deg</li>
+      <li>to bottom 180deg</li>
+      <li>to left 270deg</li>
+    </ul>
+  </div>
+  <div class="background-sec4">
+    <h1>色标的用法---重复线性渐变repeating-linear-gradient</h1>
+    <ul>
+      <li>to top 0deg</li>
+      <li>to right 90deg</li>
+      <li>to bottom 180deg</li>
+      <li>to left 270deg</li>
+    </ul>
+  </div>
+
+</body>
+</html>

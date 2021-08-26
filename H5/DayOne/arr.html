@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* table{
+      border: 1px solid #222;
+    } */
+  </style>
+</head>
+<body>
+  <h1 align="center">Html <span style="color: red;">&lt;Day one&gt;</span></h1>
+  <hr>
+  <h2>1 Html 文档片段</h2>
+  <h3>1.1 问题</h3>
+  <p>创建如图-1所示的html页面</p>
+  <h3>1.2 方案</h3>
+  <p>创建如图-1所示的html页面</p>
+  <h2>2 Html 文档片段</h2>
+  <h3>2.1 问题</h3>
+  <p>创建如图-1所示的html页面</p>
+  <h3>2.2 方案</h3>
+  <p>创建如图-1所示的html页面</p>
+  <u>test u</u>
+  <b>test b</b>
+  <i>test i</i>
+  <sub>test sub</sub>
+  <sup>test sup</sup>
+  <hr>
+  <table  width="500" height="500" cellpadding="20" bgcolor="red" align="left" border="2" cellspacing="10">
+    <caption>我是表格的标题</caption>
+    <tbody>
+      <tr>
+        <th>测试</th>
+        <th>测试</th>
+        <th>测试</th>
+      </tr>
+      <tr align="center" valign="middle" bgcolor="yellow">
+        <th>李太白</th>
+        <td>李太白</td>
+        <td>李太白</td>
+      </tr>
+      <tr>
+        <th>李太白</th>
+        <td>李太白</td>
+        <td>李太白</td>
+      </tr>
+      <tr>
+        <th>李太白</th>
+        <td>李太白</td>
+        <td>李太白</td>
+      </tr>
+      <tr>
+        <th colspan="2">李太白</th>
+        <td>李太白</td>
+      </tr>
+    </tbody>
+  </table>
+  <table align="center" border="1" cellspacing="5" cellpadding="5">
+    <caption>唐朝诗人李太白</caption>
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>工资</th>
+      </tr>
+    </thead>
+    <tbody bgcolor="pink">
+      <tr>
+        <td>李白</td>
+        <td rowspan="4">男</td>
+        <td>35</td>
+        <td>100两</td>
+      </tr>
+      <tr>
+        <td>李白</td>
+        <!-- <td>男</td> -->
+        <td>35</td>
+        <td>100两</td>
+      </tr>
+      <tr>
+        <td>李白</td>
+        <!-- <td>男</td> -->
+        <td>35</td>
+        <td>100两</td>
+      </tr>
+      <tr>
+        <td>李白</td>
+        <!-- <td>男</td> -->
+        <td>35</td>
+        <td>100两</td>
+      </tr>
+      <tr>
+        <td>李白</td>
+        <td>男</td>
+        <td>35</td>
+        <td>100两</td>
+      </tr>
+      <tr>
+        <td>李白</td>
+        <td>男</td>
+        <td>35</td>
+        <td>100两</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" align="right">总计</td>
+        <td>2100</td>
+      </tr>
+    </tfoot>
+  </table>
+  <script>
+    var arr = [1, 2, 3, 4 , 5]
+    console.log(arr)
+    console.log(arr[2])
+    arr[2] = '星期' + arr[2] 
+    console.log(arr[2])
+    console.log(arr[10])
+    arr[6] = '星期天'
+    console.log(arr)
+    arr[arr.length] = '星球八'
+    console.log(arr[7])
+
+    // var ename = ''
+    // var emps = []
+    // while ((ename = prompt(
+    //   '请输入你的姓名？'
+    // ))!= 'exit' ) {
+    //   // emps[emps.length] = ename
+    //   emps.push(ename)
+    // }
+    // console.log('emps', emps)
+
+    function getMax(arr) {
+      let max = 0
+      for (let index = 0; index < arr.length; arr[index]>max && (max = arr[index]),index++) {
+        // if (arr[index] > max) {
+        //   max = arr[index]
+        // } 
+      }
+      return max
+    }
+
+    console.log(getMax([1,2,34,,55,,6,7,,8,8]))
+  </script>
+</body>
+</html>
