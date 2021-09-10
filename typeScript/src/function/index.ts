@@ -63,7 +63,7 @@ restFn(a, 1, 2, 3)
 function reverse(x: number): number
 function reverse(x: string): string
 function reverse(x: number | string): number | string | void {
-  if (typeof x === 'number') {
+  if (typeof x === 'number') { // 类型守卫
     return Number(x.toString().split('').reverse().join(''))
   } else if (typeof x === 'string') {
     return x.split('').reverse().join('')
@@ -76,3 +76,30 @@ console.log(reverse('123456'))
 console.log(reverse(123456))
 
 console.log(reverse(1234444))
+
+
+let IdGenerator: (chars: string, nums: number) => string;
+
+function createUserId(name: string, id: number): string {
+  return name + id;
+}
+
+IdGenerator = createUserId;
+
+// 函数实现签名必须要兼容函数重载的签名
+function fn(x: string): string | number;
+function fn(x: number): string | number;
+function fn(x: string | number): string | number {
+  return 'Opsss'
+}
+
+
+function len(s: string): number;
+function len(arr: any[]): number;
+function len(x: any) {
+  return x.length;
+}
+
+len(""); // OK
+len([0]); // OK
+len(Math.random() > 0.5 ? "hello" : [0]);
