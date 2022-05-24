@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <div>
-      <!-- <chapters-two /> -->
-      <!-- <chapters-six /> -->
-      <!-- <chapters-seven />
-      <chapters-eight /> -->
-      <!-- <chapters-ninght /> -->
-      <!-- <proxy /> -->
-      <!-- <spike /> -->
-      <!-- <VuexState /> -->
-      <!-- <min-vuex /> -->
+      <!-- <chapters-two />
+      <chapters-fourth />
+      <chapters-six />
+      <chapters-seven />
+      <chapters-eight />
+      <chapters-ninght />
+      <proxy />
+      <spike />
+      <VuexState /> -->
+      <min-vuex />
       <shop-cart />
     </div>
     
@@ -27,7 +28,7 @@
 // import chaptersNinght from './views/chapters1.9/index'
 // import Proxy from './views/Proxy/index'
 // import VuexState from './views/VuexState/index'
-// import MinVuex from './views/minVuex/index'
+import MinVuex from './views/minVuex/index'
 import ShopCart from './views/shopCart'
 // import Spike from './views/Spike/index'
 export default {
@@ -37,14 +38,14 @@ export default {
     // chaptersTwo,
     // chaptersFourth,
     // chaptersFive,
-    // chaptersSix
+    // chaptersSix,
     // chaptersSeven,
     // chaptersEight,
     // chaptersNinght,
-    // Proxy
+    // Proxy,
     // Spike,
     // VuexState,
-    // MinVuex,
+    MinVuex,
     ShopCart
   },
   data() {

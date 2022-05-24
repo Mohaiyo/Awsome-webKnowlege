@@ -38,6 +38,9 @@ function contractN<T extends lengthwish>(arg: T): T {
   return arg
 }
 
+contractN(['1', 2, 4, 5])
+contractN({ length: 1, value: 2 })
+
 // 泛型接口
 
 interface createArrayFunc {
@@ -67,7 +70,7 @@ createArray3 = function <T>(length: number, value: T): Array<T> {
   return result;
 }
 
-createArray(3, 'x'); // ['x', 'x', 'x']
+createArrayFn(3, 'x'); // ['x', 'x', 'x']
 createArray2(5, 'y'); // ['y', 'y', 'y', 'y', 'y']
 createArray3(3, 'z'); // ['z', 'z', 'z']
 
@@ -81,3 +84,19 @@ class GenericNumber<T> {
 let numG = new GenericNumber<number>()
 numG.zeroValue = 1
 numG.add = function (x, y) { return x + y }
+
+let str = new GenericNumber<string>()
+
+str.zeroValue = ''
+
+str.add('', 'test')
+
+// 在通用约束中使用类型参数
+
+function getProperty<T, Key extends keyof T>(obj: T, key: Key) {
+  return obj[key]
+}
+
+let obj = { a: 1, b: 'two', c: '三' }
+getProperty(obj, 'a')
+getProperty(obj, 'm')

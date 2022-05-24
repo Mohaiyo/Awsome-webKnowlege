@@ -1,0 +1,5 @@
+const exampleA = require('./a')
+console.log('exampleA', exampleA.default)
+console.log('typeof', typeof exampleA.default)
+console.log('instance', exampleA.default.prototype)
+console.log('getOwnPropertyNames',  Object.getOwnPropertyNames(exampleA.default.prototype))
