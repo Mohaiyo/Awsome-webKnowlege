@@ -75,3 +75,10 @@ controller.abort();
 
 - 正则的方式 /\d{1,3}(?=(\d{3})+$)/
 - reduce方法 string split reverse  index % 3
+- 
+
+6.http请求消
+  - 消息结构
+  - 请求方法
+  - content-type: 常见的类型
+  - 状态码

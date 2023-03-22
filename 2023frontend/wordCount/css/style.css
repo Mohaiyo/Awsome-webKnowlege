@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  line-height: 2;
+}/*# sourceMappingURL=style.css.map */
