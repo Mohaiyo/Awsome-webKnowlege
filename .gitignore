@@ -14,4 +14,5 @@ yarn-error.log
 .idea
 *.iml
 webSiteOptimize/
-**/**/node_modules
+**/node_modules
+debug.log
